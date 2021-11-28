@@ -3,8 +3,8 @@ import pygame
 
 from draw import *
 from calc import *
-from const import *
-from config import *
+from event import *
+
 
 pygame.init()
 
@@ -15,7 +15,6 @@ pygame.display.update()
 run = True
 while run:
     clock.tick(FPS)
-    screen.fill(SPACE)
     Draw()
     UpDate()
     for event in pygame.event.get():

@@ -2,6 +2,7 @@ import numpy as np
 
 from const import *
 from config import *
+from event import *
 
 def dist(self,other):
     d = np.sqrt((self.x - other.x) ** 2 + (self.y - other.y) ** 2)
@@ -29,36 +30,42 @@ class HeavObj:
 
     def force_calc(self, other):
         d = dist(self, other)
-        self.ax = - G * other.m * (self.x - other.x) / (d ** 3)
-        self.ay = - G * other.m * (self.y - other.y) / (d ** 3)
-
+        self.ax += - G * other.m * (self.x - other.x) / (d ** 3)
+        self.ay += - G * other.m * (self.y - other.y) / (d ** 3)
     def move_calc(self):
-        self.vy += self.ax * dt
-        self.vx += self.ay * dt
+        self.vx += self.ax * dt
+        self.vy += self.ay * dt
         self.x += self.vx * dt
         self.y += self.vy * dt
+        self.ax, self.ay = 0, 0
+
 
 HEAVEN_OBJECTS = []
 
-for k in range(N_objects):
+for k in range(len(objects[key])):
     HEAVEN_OBJECTS.append(
         HeavObj(
-            objects[k]['x'],
-            objects[k]['y'],
-            objects[k]['vx'],
-            objects[k]['vy'],
-            objects[k]['m'],
-            objects[k]['r'],
-            COLORS[objects[k]['c']],
-            objects[k]['t']
+            objects[key][k]['x'],
+            objects[key][k]['y'],
+            objects[key][k]['vx'],
+            objects[key][k]['vy'],
+            objects[key][k]['m'],
+            objects[key][k]['r'],
+            COLORS[key][objects[key][k]['c']],
+            objects[key][k]['t']
         ))
 
 def Force():
     for body_this in HEAVEN_OBJECTS:
         for body_other in HEAVEN_OBJECTS:
-            body_this.force_calc(body_other)
+            if body_other == body_this:
+                pass
+            else:
+                body_this.force_calc(body_other)
 
 def Move():
+    global dt
+    dt = CheckCalc(dt)
     for body in HEAVEN_OBJECTS:
         body.move_calc()
 
