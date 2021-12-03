@@ -41,19 +41,20 @@ class HeavObj:
 
 
 HEAVEN_OBJECTS = []
-
-for k in range(len(objects[key])):
-    HEAVEN_OBJECTS.append(
-        HeavObj(
-            objects[key][k]['x'],
-            objects[key][k]['y'],
-            objects[key][k]['vx'],
-            objects[key][k]['vy'],
-            objects[key][k]['m'],
-            objects[key][k]['r'],
-            COLORS[key][objects[key][k]['c']],
-            objects[key][k]['t']
-        ))
+def Start(key):
+    HEAVEN_OBJECTS.clear()
+    for k in range(len(objects[key])):
+        HEAVEN_OBJECTS.append(
+            HeavObj(
+                objects[key][k]['x'],
+                objects[key][k]['y'],
+                objects[key][k]['vx'],
+                objects[key][k]['vy'],
+                objects[key][k]['m'],
+                objects[key][k]['r'],
+                COLORS[key][objects[key][k]['c']],
+                objects[key][k]['t']
+            ))
 
 def Force():
     for body_this in HEAVEN_OBJECTS:

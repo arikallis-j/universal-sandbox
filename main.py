@@ -1,3 +1,5 @@
+import sys
+
 import numpy as np
 import pygame
 
@@ -10,18 +12,28 @@ pygame.init()
 
 clock = pygame.time.Clock() #таймер
 screen.fill(SPACE)
+
+run = RUN
+key = KEY
 pygame.display.update()
+while True:
+    while run['menu']:
+        clock.tick(FPS)
+        DrawMenu()
+        run = CheckMenu(run)
+        pygame.display.update()
 
-run = True
-while run:
-    clock.tick(FPS)
-    Draw()
-    UpDate()
-    for event in pygame.event.get():
-        if event.type == pygame.QUIT:
-            run = False
-
-    pygame.display.update()
-
-
+    while run['config']:
+        clock.tick(FPS)
+        DrawConfig()
+        run, key = CheckConfig(run, key)
+        pygame.display.update()
+    if run['game']:
+        Start(key)
+    while run['game']:
+        clock.tick(FPS)
+        Draw()
+        UpDate()
+        run = Check(run)
+        pygame.display.update()
 pygame.quit()

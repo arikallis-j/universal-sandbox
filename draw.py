@@ -7,7 +7,7 @@ from event import *
 pygame.init()
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  # создание экрана
-
+myfont = pygame.font.SysFont('Comic Sans MS', 30) #шрифты для надписи
 
 class DrawObj:
     def __init__(self, type, color, radius, x, y):
@@ -29,6 +29,24 @@ class DrawObj:
         else:
             pass
 
+def DrawMenu():
+    screen.fill(SPACE)
+    for button in buttons['menu']:
+        myfont.render(button['name'], False, COLORS_BUTTON[button['color']])
+        screen.blit(
+                    myfont.render(button['name'], False, COLORS_BUTTON[button['color']]),
+                    (button['x'], button['y'])
+                    )
+def DrawConfig():
+    screen.fill(SPACE)
+    for button in buttons['config']:
+        myfont.render(button['name'], False, COLORS_BUTTON[button['color']])
+        screen.blit(
+                    myfont.render(button['name'], False, COLORS_BUTTON[button['color']]),
+                    (button['x'], button['y'])
+                    )
+
+
 def Draw():
     global M, A, B
     M, A, B = CheckDraw(M, A, B)
@@ -45,3 +63,5 @@ def Draw():
     screen.fill(SPACE)
     for body in DRAW_OBJECTS:
         body.draw()
+
+

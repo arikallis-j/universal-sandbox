@@ -5,7 +5,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 0,
         'm': 333333.3333,
-        'r': 10,
+        'r': 5,
         'c': 0,
         't': 'star',
         'name': 'Sun'
