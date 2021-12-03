@@ -14,7 +14,7 @@ class DrawObj:
         self.type = type
 
         self.color = color
-        self.r = M/100* radius
+        self.r = abs(M)/100* radius
         if self.r<1:
             self.r = 1
 
