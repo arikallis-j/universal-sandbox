@@ -36,4 +36,7 @@ def CheckCalc(dt):
 
     if keys[pygame.K_d]:
         dt += dt0
+
+    if keys[pygame.K_0]:
+        dt = 0 #остановка объектов
     return dt
