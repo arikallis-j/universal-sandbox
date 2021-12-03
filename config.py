@@ -5,7 +5,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 0,
         'm': 333333.3333,
-        'r': 5,
+        'r': 0.00464,
         'c': 0,
         't': 'star',
         'name': 'Sun'
@@ -16,7 +16,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 10.0988,
         'm': 0.06,
-        'r': 5,
+        'r': 0.000016267,
         'c': 1,
         't': 'planet',
         'name': 'Mercury'
@@ -27,7 +27,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 7.3875,
         'm': 0.81,
-        'r': 5,
+        'r': 0.000040333,
         'c': 2,
         't': 'planet',
         'name': 'Venus'
@@ -38,7 +38,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 6.2831,
         'm': 0,
-        'r': 5,
+        'r': 0.000042467,
         'c': 3,
         't': 'planet',
         'name': 'Earth'
@@ -49,7 +49,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 5.0172,
         'm': 0.11,
-        'r': 5,
+        'r': 0.0000226,
         'c': 4,
         't': 'planet',
         'name': 'Mars'
@@ -60,7 +60,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 2.7559,
         'm': 318,
-        'r': 5,
+        'r': 0.0004766,
         'c': 5,
         't': 'planet',
         'name': 'Jupiter'
@@ -71,7 +71,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 2.0346,
         'm': 95,
-        'r': 5,
+        'r': 0.0004018,
         'c': 6,
         't': 'planet',
         'name': 'Saturn'
@@ -82,7 +82,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 1.4353,
         'm': 14.5,
-        'r': 5,
+        'r': 0.0001704,
         'c': 7,
         't': 'planet',
         'name': 'Uranus'
@@ -93,7 +93,7 @@ objects_sun_system = [
         'vx': 0,
         'vy': 1.1462,
         'm': 17,
-        'r': 5,
+        'r': 0.000165067,
         'c': 8,
         't': 'planet',
         'name': 'Neptune'
@@ -106,7 +106,7 @@ objects_double_star = [
         'vx': 0,
         'vy': 4.4429,
         'm': 333333.3333,
-        'r': 10,
+        'r': 0.00464,
         'c': 0,
         't': 'star',
         'name': 'sun'
@@ -117,7 +117,7 @@ objects_double_star = [
         'vx': 0,
         'vy': -4.4428,
         'm': 333333.3333,
-        'r': 10,
+        'r': 0.00464,
         'c': 1,
         't': 'star',
         'name': 'anti-sun'

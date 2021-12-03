@@ -66,7 +66,7 @@ def Check(RUN):
 
     return run
 
-def CheckDraw(M, A, B):
+def CheckButton(M, A, B, dt):
     keys = pygame.key.get_pressed()
 
     if keys[pygame.K_LEFT]:
@@ -84,21 +84,20 @@ def CheckDraw(M, A, B):
 
 
     if keys[pygame.K_w]:
-        M += M0
+        M *= M0
 
     if keys[pygame.K_s]:
-        M -= M0
+        M *= 1/M0
 
-    return M, A, B
-def CheckCalc(dt):
-    keys = pygame.key.get_pressed()
     if keys[pygame.K_a]:
-        dt -= dt0
+        dt *= 1/dt0
 
     if keys[pygame.K_d]:
-        dt += dt0
+        dt *= dt0
 
     if keys[pygame.K_0]:
-        dt = 0 #остановка объектов
+        dt = 0
 
-    return dt
+    if keys[pygame.K_9]:
+        dt = 0.001
+    return M, A, B, dt

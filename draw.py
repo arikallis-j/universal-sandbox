@@ -14,9 +14,14 @@ class DrawObj:
         self.type = type
 
         self.color = color
-        self.r = abs(M)/100* radius
+        self.r =  M*radius
         if self.r<1:
-            self.r = 1
+            if self.type == 'star':
+                self.r = 4
+            elif self.type == 'planet':
+                self.r = 2
+            else:
+                self.r = 1
 
         self.x = x*M + A
         self.y = y*M + B
@@ -48,8 +53,8 @@ def DrawConfig():
 
 
 def Draw():
-    global M, A, B
-    M, A, B = CheckDraw(M, A, B)
+    global M, A, B, dt
+    M, A, B, dt = CheckButton(M, A, B, dt)
     DRAW_OBJECTS = []
     for body in HEAVEN_OBJECTS:
         DRAW_OBJECTS.append(
@@ -63,5 +68,13 @@ def Draw():
     screen.fill(SPACE)
     for body in DRAW_OBJECTS:
         body.draw()
+    screen.blit(
+        myfont.render(buttons['panel'][0]['name'] + str(round(100/M * 1000)/1000) + " a.u./100px", False, COLORS_BUTTON[buttons['panel'][0]['color']]),
+        (buttons['panel'][0]['x'], buttons['panel'][0]['y'])
+    )
+    screen.blit(
+        myfont.render(buttons['panel'][1]['name'] + str(round(365*dt*FPS)) + " days/sec", False, COLORS_BUTTON[buttons['panel'][1]['color']]),
+        (buttons['panel'][1]['x'], buttons['panel'][1]['y'])
+    )
 
 

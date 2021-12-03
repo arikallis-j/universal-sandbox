@@ -66,7 +66,7 @@ def Force():
 
 def Move():
     global dt
-    dt = CheckCalc(dt)
+    dt = CheckButton(M,A,B,dt)[3]
     for body in HEAVEN_OBJECTS:
         body.move_calc()
 

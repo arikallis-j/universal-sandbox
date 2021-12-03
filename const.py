@@ -3,7 +3,7 @@ from numpy import pi
 WIDTH = 700 #длина экрана
 HEIGHT = 700 #ширина экрана
 
-FPS = 144
+FPS = 120
 KEY = 'double-star'
 RUN = {
     'menu': True,
@@ -14,8 +14,8 @@ RUN = {
 G = (2 * pi)**2 * 3 * 10**(-6) # a.e^3/(год^2*масса-земли)
 
 
-dt, dt0 = 1/FPS , 0.00001
-M, M0 = 10, 0.3
+dt, dt0 = 0.001 , 1.001
+M, M0 = 100, 1.001
 A, A0  = WIDTH/2, 1
 B, B0 = HEIGHT/2, 1
 
@@ -45,7 +45,7 @@ menu_buttons = [
         'type': 'start',
         'name': 'Start game',
         'color': 0,
-        'x': 260,
+        'x': 270,
         'y': 300,
         'l': 200,
         'h': 30
@@ -74,7 +74,7 @@ config_buttons = [
         'type': 'sun-system',
         'name': 'SUN SYSTEM',
         'color': 0,
-        'x': 260,
+        'x': 270,
         'y': 300,
         'l': 200,
         'h': 30
@@ -90,7 +90,30 @@ config_buttons = [
     }
 ]
 
+panel = [
+    {
+        'type': 'scale',
+        'name': 'Scale: ',
+        'color': 0,
+        'x': 0,
+        'y': 0,
+        'l': 100,
+        'h': 30
+    },
+    {
+        'type': 'time',
+        'name': 'Time: ',
+        'color': 0,
+        'x': 0,
+        'y': 20,
+        'l': 100,
+        'h': 30
+    }
+
+]
+
 buttons = {
     'menu': menu_buttons,
-    'config': config_buttons
+    'config': config_buttons,
+    'panel': panel
 }
