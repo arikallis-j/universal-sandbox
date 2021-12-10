@@ -7,21 +7,21 @@ from event import *
 pygame.init()
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  # создание экрана
-myfont = pygame.font.SysFont('Comic Sans MS', 30) #шрифты для надписи
+myfont = pygame.font.SysFont('Comic Sans MS', 22) #шрифты для надписи
 
 class DrawObj:
     def __init__(self, type, color, radius, x, y):
         self.type = type
 
         self.color = color
-        self.r =  M*radius
-        if self.r<1:
+        self.r = abs(M*radius)
+        if self.r<2:
             if self.type == 'star':
-                self.r = 4
-            elif self.type == 'planet':
                 self.r = 2
-            else:
+            elif self.type == 'planet':
                 self.r = 1
+            else:
+                self.r = 0.5
 
         self.x = x*M + A
         self.y = y*M + B
