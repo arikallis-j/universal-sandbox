@@ -7,8 +7,8 @@ from event import *
 pygame.init()
 
 screen = pygame.display.set_mode((WIDTH, HEIGHT))  # создание экрана
-myfont = pygame.font.SysFont('Comic Sans MS', 22) #шрифты для надписи
-
+myfont = pygame.font.SysFont('Comic Sans MS', 30) #шрифты для надписи
+titlefont = pygame.font.SysFont('meera', 70)
 class DrawObj:
     def __init__(self, type, color, radius, x, y):
         self.type = type
@@ -36,8 +36,11 @@ class DrawObj:
 
 def DrawMenu():
     screen.fill(SPACE)
+
+    screen.blit(
+        titlefont.render("UNIVERSAL SANDBOX", True, YELLOW), (80, 100)
+    )
     for button in buttons['menu']:
-        myfont.render(button['name'], False, COLORS_BUTTON[button['color']])
         screen.blit(
                     myfont.render(button['name'], False, COLORS_BUTTON[button['color']]),
                     (button['x'], button['y'])

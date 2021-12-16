@@ -19,23 +19,23 @@ M, M0 = 100, 1.001
 A, A0  = WIDTH/2, 1
 B, B0 = HEIGHT/2, 1
 
-SPACE = 0x002238
+SPACE = 0x000000 #0x002238
 RED = 0xFF0000
 BLUE = 0x0000FF
-YELLOW = 0xFFC91F
+YELLOW = 0xFFFF00
 GREEN = 0x00FF00
 PINK = 0xFF7E93
 BROWN = 0x964B00
 OCHRE = 0xCC7722
 MAGENTA = 0xFF03B8
 CYAN = 0x00FFCC
-BLACK = (0, 0, 0)
+BLACK = 0x000000
 WHITE = 0xFFFFFF
 GREY = 0x7D7D7D
-COLORS_BUTTON = [WHITE]
+COLORS_BUTTON = [WHITE, YELLOW]
 COLORS_SUN_SYSTEM = [YELLOW, GREY, PINK, GREEN, RED, BROWN, OCHRE, CYAN, BLUE]
 COLORS_DOUBLE_STAR = [YELLOW, BLUE]
-COLORS_COLLISION = [BLUE, GREEN]
+COLORS_COLLISION = [GREEN]
 COLORS = {
     'sun-system': COLORS_SUN_SYSTEM,
     'double-star': COLORS_DOUBLE_STAR,
@@ -74,7 +74,7 @@ menu_buttons = [
 config_buttons = [
     {
         'type': 'sun-system',
-        'name': 'SUN SYSTEM',
+        'name': 'Sun system',
         'color': 0,
         'x': 270,
         'y': 300,
@@ -83,7 +83,7 @@ config_buttons = [
     },
     {
         'type': 'double-star',
-        'name': 'DOUBLE STAR',
+        'name': 'Double star',
         'color': 0,
         'x': 270,
         'y': 370,
@@ -92,7 +92,7 @@ config_buttons = [
     },
     {
         'type': 'collision',
-        'name': 'OBJECTS FOR COLLISION',
+        'name': 'Collision',
         'color': 0,
         'x': 270,
         'y': 440,
