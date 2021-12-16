@@ -112,19 +112,44 @@ objects_double_star = [
         'name': 'sun'
     },
     {
-        'x': 0.5,
+        'x': 2,
         'y': 0,
         'vx': 0,
         'vy': -4.4428,
         'm': 333333.3333,
-        'r': 0.00464,
+        'r': 0.005,
         'c': 1,
         't': 'star',
         'name': 'anti-sun'
     }
 ]
+collision = [
+    {
+        'x': -2,
+        'y': 0,
+        'vx': 0,
+        'vy': 0,
+        'm': 300000,
+        'r': 0.04,
+        'c': 0,
+        't': 'planet',
+        'name': 'p1'
+    },
+    {
+        'x': 2,
+        'y': 0,
+        'vx': 0,
+        'vy': 0,
+        'm': 300000,
+        'r': 0.04,
+        'c': 1,
+        't': 'planet',
+        'name': 'p2'
+    }
+]
 
 objects = {
     'sun-system': objects_sun_system,
-    'double-star': objects_double_star
+    'double-star': objects_double_star,
+    'collision': collision
 }
