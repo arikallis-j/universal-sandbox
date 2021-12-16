@@ -50,6 +50,10 @@ def CheckConfig(RUN, KEY):
                     if button['type']=='double-star':
                         run['menu'] = True
                         key = button['type']
+                    if button['type']=='collision':
+                        run['menu'] = True
+                        key = button['type']
+
 
     return run, key
 
@@ -101,3 +105,6 @@ def CheckButton(M, A, B, dt):
     if keys[pygame.K_9]:
         dt = 0.001
     return M, A, B, dt
+
+
+
