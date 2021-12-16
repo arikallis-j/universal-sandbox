@@ -54,6 +54,7 @@ def DrawConfig():
 
 def Draw():
     global M, A, B, dt
+    check_collision(HEAVEN_OBJECTS)
     M, A, B, dt = CheckButton(M, A, B, dt)
     DRAW_OBJECTS = []
     for body in HEAVEN_OBJECTS:
