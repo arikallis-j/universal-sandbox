@@ -35,9 +35,11 @@ GREY = 0x7D7D7D
 COLORS_BUTTON = [WHITE]
 COLORS_SUN_SYSTEM = [YELLOW, GREY, PINK, GREEN, RED, BROWN, OCHRE, CYAN, BLUE]
 COLORS_DOUBLE_STAR = [YELLOW, BLUE]
+COLORS_COLLISION = [BLUE, GREEN]
 COLORS = {
     'sun-system': COLORS_SUN_SYSTEM,
-    'double-star': COLORS_DOUBLE_STAR
+    'double-star': COLORS_DOUBLE_STAR,
+    'collision': COLORS_COLLISION
 }
 
 menu_buttons = [
@@ -85,6 +87,15 @@ config_buttons = [
         'color': 0,
         'x': 270,
         'y': 370,
+        'l': 100,
+        'h': 30
+    },
+    {
+        'type': 'collision',
+        'name': 'OBJECTS FOR COLLISION',
+        'color': 0,
+        'x': 270,
+        'y': 440,
         'l': 100,
         'h': 30
     }
