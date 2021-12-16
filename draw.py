@@ -38,7 +38,7 @@ def DrawMenu():
     screen.fill(SPACE)
 
     screen.blit(
-        titlefont.render("UNIVERSAL SANDBOX", True, YELLOW), (80, 100)
+        titlefont.render("UNIVERSAL SANDBOX", True, TITLE), (80, 100)
     )
     for button in buttons['menu']:
         screen.blit(
