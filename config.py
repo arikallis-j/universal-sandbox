@@ -1,3 +1,4 @@
+import random as rd
 objects_sun_system = [
     {
         'x': 0,
@@ -37,7 +38,7 @@ objects_sun_system = [
         'y': 0,
         'vx': 0,
         'vy': 6.2831,
-        'm': 0,
+        'm': 1,
         'r': 0.000042467,
         'c': 3,
         't': 'planet',
@@ -112,7 +113,7 @@ objects_double_star = [
         'name': 'sun'
     },
     {
-        'x': 2,
+        'x': 0.5,
         'y': 0,
         'vx': 0,
         'vy': -4.4428,
@@ -123,30 +124,20 @@ objects_double_star = [
         'name': 'anti-sun'
     }
 ]
-collision = [
+collision = []
+for i in range(20):
+    collision.append(
     {
-        'x': -2,
-        'y': 0,
+        'x': 1*(2*rd.random()-1),
+        'y': 1*(2*rd.random()-1),
         'vx': 0,
         'vy': 0,
-        'm': 300000,
-        'r': 0.04,
+        'm': 1,
+        'r': 0.00004,
         'c': 0,
         't': 'planet',
-        'name': 'p1'
-    },
-    {
-        'x': 2,
-        'y': 0,
-        'vx': 0,
-        'vy': 0,
-        'm': 300000,
-        'r': 0.04,
-        'c': 1,
-        't': 'planet',
-        'name': 'p2'
-    }
-]
+        'name': 'planet'+str(i+1)
+    })
 
 objects = {
     'sun-system': objects_sun_system,

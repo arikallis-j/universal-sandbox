@@ -11,7 +11,6 @@ from event import *
 pygame.init()
 
 clock = pygame.time.Clock() #таймер
-screen.fill(SPACE)
 
 run = RUN
 key = KEY
