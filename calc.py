@@ -97,7 +97,7 @@ def collision(i, j):
     vX1x = vX1 * cos(alpha1)
     vX1y = vX1 * sin(alpha1)
     vX2x = vX2 * cos(alpha2)
-    vX2x = vX2 * sin(alpha2)
+    vX2y = vX2 * sin(alpha2)
     vx1c = vx1 - vX1x
     vy1c = vy1 - vX1y
     vx2c = vx2 - vX2x
